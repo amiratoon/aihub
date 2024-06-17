@@ -23,17 +23,31 @@ NODES=(
     "https://github.com/bronkula/comfyui-fitsize"
     "https://github.com/pythongosssss/ComfyUI-WD14-Tagger"
     "https://github.com/SLAPaper/ComfyUI-Image-Selector"
+    "https://github.com/kijai/ComfyUI-KJNodes.git"
+    "https://github.com/11cafe/comfyui-workspace-manager.git"
+
 )
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt"
-    #"https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt"
     #"https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
-    #"https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
+    #"https://civitai.com/api/download/models/361593"
+    #"https://civitai.com/api/download/models/351306"
+
 )
 
 LORA_MODELS=(
     #"https://civitai.com/api/download/models/16576"
+    #"https://civitai.com/api/download/models/345252"
+    #"https://civitai.com/api/download/models/417163"
+    #"https://civitai.com/api/download/models/394722"
+    #"https://civitai.com/api/download/models/513907"
+    #"https://civitai.com/api/download/models/561042"
+
+
+
+
+
 )
 
 VAE_MODELS=(
@@ -54,9 +68,8 @@ CONTROLNET_MODELS=(
     "https://huggingface.co/kohya-ss/ControlNet-diff-modules/resolve/main/diff_control_sd15_depth_fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_hed-fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_mlsd-fp16.safetensors"
+    #"https://huggingface.co/diffusers/controlnet-depth-sdxl-1.0/resolve/main/diffusion_pytorch_model.fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_normal-fp16.safetensors"
-    "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_openpose-fp16.safetensors"
-    "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_scribble-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_seg-fp16.safetensors"
     "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_canny-fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_color-fp16.safetensors"
@@ -66,6 +79,7 @@ CONTROLNET_MODELS=(
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_seg-fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_sketch-fp16.safetensors"
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_style-fp16.safetensors"
+
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -162,7 +176,7 @@ function provisioning_download() {
 }
 
 function build_ai_hub_models_configuration() {
-    printf "Start AiHub configuring ..."
+    printf "Start AIHub configuring ..."
     sudo apt-get install -y axel
     comfy_path="/opt/ComfyUI"
     mkdir -p $comfy_path/models
